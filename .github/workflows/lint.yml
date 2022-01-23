@@ -3,7 +3,7 @@ name: Lint
 on: [push]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,3 +12,4 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm ci
+      - run: make lint
